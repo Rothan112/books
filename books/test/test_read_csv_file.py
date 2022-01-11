@@ -1,5 +1,6 @@
 import unittest
 from books.Storage import Storage
+from books.Book import Book
 
 class CsvReaderTest(unittest.TestCase):
     def setUp(self):
