@@ -1,8 +1,9 @@
+import operator
 class BooksList:
     list = []
 
     def __init__(self):
-        pass
+        self.favorites = []
 
     def add(self, book):
         self.list.append(book)
@@ -12,4 +13,9 @@ class BooksList:
             print(book.title + "  " + book.author + "  " + book.genre + "  " + book.status)
 
     def sort(self):
-        self.list.sort()
+        self.list = sorted(self.list, key=operator.attrgetter('title'))
+
+    def addFavorite(self, favoriteBook):
+        self.favorites.append(favoriteBook)
+
+
