@@ -33,11 +33,4 @@ class BooksListTest(unittest.TestCase):
         favoriteBook = self.myBooks.list[0]
         self.myBooks.addFavorite(favoriteBook)
         self.assertTrue(favoriteBook in self.myBooks.favorites)
-        
-    def test_search_book(self):
-        findBook = self.myBooks.BooksList[6]
-        self.assertEqual(findBook, self.myBooks.searchBook(BooksList[6].title))
-         
-        
-        
 
