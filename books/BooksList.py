@@ -17,5 +17,8 @@ class BooksList:
 
     def addFavorite(self, favoriteBook):
         self.favorites.append(favoriteBook)
+        
+    def searchBook(self, BooksList):
+        
 
 
