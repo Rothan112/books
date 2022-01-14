@@ -1,4 +1,6 @@
 import operator
+class NextUp:
+    nextUp = []
 class BooksList:
     list = []
 
@@ -19,6 +21,12 @@ class BooksList:
         self.favorites.append(favoriteBook)
         
     def searchBook(self, BooksList):
+        
+    def searchAuthor(self, BooksList): 
+        
+    def nextUp(self):
+        self.myList = nextUp(self.myList, key=operator.attrgetter(NextUp))
+        
         
 
 
