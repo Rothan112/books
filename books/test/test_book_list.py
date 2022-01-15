@@ -8,7 +8,7 @@ class BooksListTest(unittest.TestCase):
         book1 = Book("badtitle", "smellyauthor", "dumbgenre", "GUH??")
         book2 = Book("fivetitle", "nightsauthor", "atgenre", "freddy'shouse")
         book3 = Book("goofytitle", "funnyauthor", "bubblygenre", "fun")
-        book4 = Book("appletitle", "gamingauthor", "stupidgenre", "yAY")
+        book4 = Book("appletitle", "gamingauthor", "stupidgenre", "ihatefunthings")
         book5 = Book("zeustitle", "dadauthor", "urdumbgenre", "eatpoop")
         self.myBooks.add(book1)
         self.myBooks.add(book2)
@@ -33,4 +33,14 @@ class BooksListTest(unittest.TestCase):
         favoriteBook = self.myBooks.list[0]
         self.myBooks.addFavorite(favoriteBook)
         self.assertTrue(favoriteBook in self.myBooks.favorites)
-
+        
+    def test_search_book(self):
+        findBook = self.myBooks.BooksList[6]
+        self.assertEqual(findBook, self.myBooks.searchBook(BooksList[6].title))
+         
+    def test_search_book(self):
+        findAuthor = self.myBooks.BookList[6]
+        self.assertEqual(findAuthor, self.myBooks.searchAuthor(BookList[6].author))
+        
+    def test_next_up(self):
+        nextUp = self.assertEqual(self.myBooks.NextUp)
