@@ -34,13 +34,21 @@ class BooksListTest(unittest.TestCase):
         self.myBooks.addFavorite(favoriteBook)
         self.assertTrue(favoriteBook in self.myBooks.favorites)
         
-    def test_search_book(self):
-        findBook = self.myBooks.BooksList[6]
-        self.assertEqual(findBook, self.myBooks.searchBook(BooksList[6].title))
+    def test_search_book_by_title(self):
+        expected = self.myBooks.list[2]
+        actual = self.myBooks.searchTitle(expected.title)
+        self.assertEqual(expected.title, actual[0].title)
          
-    def test_search_book(self):
-        findAuthor = self.myBooks.BookList[6]
-        self.assertEqual(findAuthor, self.myBooks.searchAuthor(BookList[6].author))
+    def test_search_book_by_author(self):
+        expected = self.myBooks.list[4]
+        actual = self.myBooks.searchAuthor(expected.author)
+        self.assertEqual(expected.author, actual[0].author)
+
+    def test_search_book_by_author_with_two_books(self):
+        book = Book("goodtitle", "smellyauthor", "dumbgenre", "GUH??")
+        self.myBooks.add(book)
+        self.assertEqual(len(self.myBooks.searchAuthor(book.author)), 2)
+
         
-    def test_next_up(self):
-        nextUp = self.assertEqual(self.myBooks.NextUp)
+    # def test_next_up(self):
+    #     nextUp = self.assertEqual(self.myBooks.NextUp)

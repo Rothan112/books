@@ -20,9 +20,11 @@ class BooksList:
     def addFavorite(self, favoriteBook):
         self.favorites.append(favoriteBook)
         
-    def searchBook(self, BooksList):
+    def searchTitle(self, title):
+        return [x for x in self.list if x.title == title]
         
-    def searchAuthor(self, BooksList): 
-        
-    def nextUp(self):
-        self.myList = nextUp(self.myList, key=operator.attrgetter(NextUp))
+    def searchAuthor(self, author):
+        return [x for x in self.list if x.author == author]
+
+    # def nextUp(self):
+    #     self.myList = nextUp(self.myList, key=operator.attrgetter(NextUp))
