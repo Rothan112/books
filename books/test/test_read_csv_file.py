@@ -1,6 +1,6 @@
 import unittest
 from books.Storage import Storage
-from books.Book import Book
+from books.BooksList import BooksList
 
 class CsvReaderTest(unittest.TestCase):
     def setUp(self):
@@ -10,9 +10,9 @@ class CsvReaderTest(unittest.TestCase):
         self.assertEqual(True, True)
 
     def test_can_read_csv_file(self):
-        response = self.storage.readCvs("../../resources/test/Sample_Books.csv")
-        print(response)
-        self.assertIsNotNone(response)
+        response = self.storage.readBookFile("../../resources/test/Sample_Books.csv")
+        self.assertEqual(len(response.list), 1)
+        self.assertTrue(isinstance(response, BooksList))
 
     def test_file_contains_NoLongerHuman_title(self):
         response = self.storage.readBookFile("../../resources/test/Sample_Books.csv")

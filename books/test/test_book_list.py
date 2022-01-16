@@ -49,6 +49,7 @@ class BooksListTest(unittest.TestCase):
         self.myBooks.add(book)
         self.assertEqual(len(self.myBooks.searchAuthor(book.author)), 2)
 
-        
-    # def test_next_up(self):
-    #     nextUp = self.assertEqual(self.myBooks.NextUp)
+    def test_next_up(self):
+        myNextBookToRead = self.myBooks.list[4]
+        self.myBooks.setNextUp(myNextBookToRead)
+        self.assertEqual(myNextBookToRead, self.myBooks.nextBook)

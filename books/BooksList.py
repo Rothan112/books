@@ -5,6 +5,7 @@ class BooksList:
     list = []
 
     def __init__(self):
+        self.nextBook = None
         self.favorites = []
 
     def add(self, book):
@@ -28,3 +29,6 @@ class BooksList:
 
     # def nextUp(self):
     #     self.myList = nextUp(self.myList, key=operator.attrgetter(NextUp))
+    
+    def setNextUp(self, myNextBookToRead):
+        self.nextBook = myNextBookToRead
