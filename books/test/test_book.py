@@ -1,6 +1,7 @@
 import unittest
 from books.Book import Book
 
+
 class BookTest(unittest.TestCase):
     def setUp(self):
         bookList = []
@@ -11,7 +12,3 @@ class BookTest(unittest.TestCase):
     def test_create_book(self):
         book = Book("title", "author", "genre", "status")
         self.assertIsInstance(book, Book)
-
-    def test_add_book(self):
-        book = Book("dummytitle", "stupidauthor", "badgenre", "yomom")
-        bookList.add(book)
