@@ -27,8 +27,5 @@ class BooksList:
     def searchAuthor(self, author):
         return [x for x in self.list if x.author == author]
 
-    # def nextUp(self):
-    #     self.myList = nextUp(self.myList, key=operator.attrgetter(NextUp))
-    
     def setNextUp(self, myNextBookToRead):
         self.nextBook = myNextBookToRead
