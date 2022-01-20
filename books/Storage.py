@@ -15,5 +15,10 @@ class Storage:
                 books.list.append(newBook)
         return books
 
-    def writeBookFile(self, test_list, path):
-        pass
+    def writeBookFile(self, test_list, file_to_write):
+        with open(file_to_write, mode='w') as csv_file:
+            fieldnames = ['title', 'author', 'genre', 'status']
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            for book in test_list.list:
+                writer.writerow({'title': book.title, 'author': book.author, 'genre': book.genre, 'status': book.status})
