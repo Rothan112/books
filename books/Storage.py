@@ -1,6 +1,7 @@
 from books.Book import Book
 from books.BooksList import BooksList
 import csv
+
 class Storage:
     def __init__(self):
         pass
@@ -13,3 +14,6 @@ class Storage:
                 newBook = Book(row['title'], row['author'], row['genre'], row['status'])
                 books.list.append(newBook)
         return books
+
+    def writeBookFile(self, test_list, path):
+        pass
