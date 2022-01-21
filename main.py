@@ -37,6 +37,10 @@ def next_up(my_books):
     my_books.setNextUp(chosen_book[0])
 
 
+def goodbye(myBooks):
+    storage.writeBookFile(myBooks, "./resources/books.csv")
+
+
 if __name__ == '__main__':
     storage = Storage()
     myBooks = storage.readBookFile("./resources/books.csv")
@@ -55,7 +59,8 @@ if __name__ == '__main__':
         elif (stuff == "4"):
             next_up(myBooks)
         elif (stuff == "5"):
-            pass
+            goodbye(myBooks)
+            bookFunctions = False
         else:
             pass
 
