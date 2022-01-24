@@ -4,10 +4,10 @@ from books.Storage import Storage
 
 # Press the green button in the gutter to run the script.
 def add_book(my_books):
-    title = input("title: ")
-    author = input("author: ")
-    genre = input("genre: ")
-    status = input("status: ")
+    title = input("title: ").strip()
+    author = input("author: ").strip()
+    genre = input("genre: ").strip()
+    status = input("status: ").strip()
     newBook = Book(title, author, genre, status)
     my_books.add(newBook)
 
@@ -26,9 +26,15 @@ def search_author(my_books):
 
 
 def add_favorite(my_books):
-    title = input("title: ")
-    found_book = my_books.searchTitle(title)
-    my_books.addFavorite(found_book[0])
+    title = input("title: ").strip()
+    if my_books.searchFavorites(title):
+        found_book = my_books.searchTitle(title)
+        try:
+            my_books.addFavorite(found_book[0])
+        except:
+            print("Add book to book list before adding to favorites")
+    else:
+        print("Already favorited...")
 
 
 def next_up(my_books):

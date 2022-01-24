@@ -27,5 +27,12 @@ class BooksList:
     def searchAuthor(self, author):
         return [x for x in self.list if x.author == author]
 
+    def searchFavorites(self, title):
+        favorites = [x for x in self.favorites if x.title == title]
+        if len(favorites) == 0:
+            return True
+        else:
+            return False
+
     def setNextUp(self, myNextBookToRead):
         self.nextBook = myNextBookToRead
