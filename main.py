@@ -36,6 +36,11 @@ def next_up(my_books):
     chosen_book = my_books.searchTitle(title)
     my_books.setNextUp(chosen_book[0])
 
+def goodbye(my_books):
+    storage.writeBookFile(my_books, "./resources/books.csv")
+    storage.writeFavoritesFile(my_books, "./resources/favorites.csv")
+    print("Exiting program. Goodbye...")
+    exit()
 
 def goodbye(myBooks):
     storage.writeBookFile(myBooks, "./resources/books.csv")
@@ -44,10 +49,11 @@ def goodbye(myBooks):
 if __name__ == '__main__':
     storage = Storage()
     myBooks = storage.readBookFile("./resources/books.csv")
+    myBooks.favorites = storage.readFavoriteFile("./resources/favorites.csv")
 
     bookFunctions = True
     while bookFunctions:
-        stuff = input("0- add book  1- search title  2- search author  3- add favorite  4- set Next Up  5- exit:  ")
+        stuff = input("0- add book  1- search title  2- search author  3- add favorite  4- set Next Up  5- Print book list  6- exit:  ")
         if (stuff == "0"):
             add_book(myBooks)
         elif (stuff == "1"):
@@ -59,8 +65,9 @@ if __name__ == '__main__':
         elif (stuff == "4"):
             next_up(myBooks)
         elif (stuff == "5"):
+            myBooks.print()
+        elif (stuff == "6"):
             goodbye(myBooks)
-            bookFunctions = False
         else:
             pass
 

@@ -13,7 +13,7 @@ class BooksList:
 
     def print(self):
         for book in self.list:
-            print(book.title + "  " + book.author + "  " + book.genre + "  " + book.status)
+            print(book.title + "\t\t\t\t\t\t\t\t\t\t\t" + book.author + "\t\t\t\t" + book.genre + "\t\t\t" + book.status)
 
     def sort(self):
         self.list = sorted(self.list, key=operator.attrgetter('title'))
