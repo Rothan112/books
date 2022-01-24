@@ -10,7 +10,6 @@ def add_book(my_books):
     status = input("status: ")
     newBook = Book(title, author, genre, status)
     my_books.add(newBook)
-    my_books.print()
 
 
 def search_title(my_books):
@@ -23,6 +22,7 @@ def search_author(my_books):
     author_to_search = input("author: ")
     given_author = my_books.searchAuthor(author_to_search)
     print(given_author[0].author)
+
 
 
 def add_favorite(my_books):
@@ -41,10 +41,6 @@ def goodbye(my_books):
     storage.writeFavoritesFile(my_books, "./resources/favorites.csv")
     print("Exiting program. Goodbye...")
     exit()
-
-def goodbye(myBooks):
-    storage.writeBookFile(myBooks, "./resources/books.csv")
-
 
 if __name__ == '__main__':
     storage = Storage()
@@ -70,5 +66,3 @@ if __name__ == '__main__':
             goodbye(myBooks)
         else:
             pass
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
